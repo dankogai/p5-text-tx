@@ -1,4 +1,5 @@
 #ifdef __cplusplus
+#include <iostream>
 extern "C" {
 #endif
 #include "EXTERN.h"
@@ -8,7 +9,7 @@ extern "C" {
 }
 #endif
 
-#include "tx.hpp"
+#include "tx/tx.hpp"
 
 int tx_free(int txi){
     delete INT2PTR(tx_tool::tx *, txi);

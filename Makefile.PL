@@ -14,7 +14,7 @@ WriteMakefile(
     CC           => $CC,
     LD           => '$(CC)',
     LIBS         => '-ltx',
-    INC          => '-I/usr/local/include/tx',
+    #INC          => '-I/usr/local/include/tx',
     XSOPT        => '-C++',
     (
         $] >= 5.005
