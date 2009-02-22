@@ -11,11 +11,11 @@ extern "C" {
 
 #include "tx/tx.hpp"
 
-int tx_free(int txi){
+static int tx_free(int txi){
     delete INT2PTR(tx_tool::tx *, txi);
 }
 
-int tx_open(char *filename){
+static int tx_open(char *filename){
     tx_tool::tx *txp = new tx_tool::tx;
     if (txp->read(filename) == -1){
 	delete txp;
@@ -24,8 +24,7 @@ int tx_open(char *filename){
     return PTR2IV(txp);
 }
 
-static SV *
-do_callback(SV *callback, SV *s){
+static SV *do_callback(SV *callback, SV *s){
     dSP;
     int argc;
     SV *retval;
@@ -46,7 +45,7 @@ do_callback(SV *callback, SV *s){
     return retval;
 }
 
-SV *tx_gsub(int txi, SV *src, SV *callback){
+static SV *tx_gsub(int txi, SV *src, SV *callback){
     SV *result = newSV(0);
     tx_tool::tx *txp = INT2PTR(tx_tool::tx *, txi);
 
