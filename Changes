@@ -4,7 +4,7 @@
 #
 $Revision: 0.2 $ $Date: 2009/02/21 14:44:54 $
 ! Makefile.PL
-  $(LD) commented out -- more compatible
+
 ! Tx.xs
   made auxiliary functions as static as possible to avoid symbol collisions
 
