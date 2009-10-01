@@ -12,7 +12,7 @@ WriteMakefile(
     VERSION_FROM => 'lib/Text/Tx.pm',    # finds $VERSION
     PREREQ_PM    => {},                  # e.g., Module::Name => 1.1
     CC           => $CC,
-    LD           => '$(CC)',
+    # LD           => '$(CC)',
     LIBS         => '-ltx',
     #INC          => '-I/usr/local/include/tx',
     XSOPT        => '-C++',
